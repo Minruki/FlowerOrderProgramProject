@@ -20,6 +20,7 @@ import javax.swing.ImageIcon;
 import FlowerProgramPanel.BackgroundPanel;
 import java.awt.Color;
 import java.awt.SystemColor;
+import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
 public class CustomerInfo extends JFrame {
@@ -42,7 +43,7 @@ public class CustomerInfo extends JFrame {
 		contentPane.setLayout(null);
 		
 		CustomerPanel panel = new CustomerPanel();
-		panel.setBackground(new Color(255, 255, 255));
+		panel.setBackground(new Color(245, 245, 245));
 		panel.setBounds(262, 63, 310, 222);
 		contentPane.add(panel);
 		

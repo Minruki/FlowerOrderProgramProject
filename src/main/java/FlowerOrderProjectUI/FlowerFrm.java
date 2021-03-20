@@ -50,7 +50,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	
     	btnOrder = new JButton("Order");
     	btnOrder.addActionListener(this);
-    	panel_1.setLayout(new GridLayout(0, 1, 0, 0));
+    	panel_1.setLayout(new GridLayout(0, 1, 0, 5));
     	btnOrder.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnOrder);
     	
