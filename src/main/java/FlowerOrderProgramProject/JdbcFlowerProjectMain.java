@@ -20,7 +20,7 @@ public class JdbcFlowerProjectMain {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
-			String url = "jdbc:mysql://localhost:3306/flowerorderprogram?useSSL=false";
+			String url = "jdbc:mysql://localhost:3306/flower?useSSL=false";
 			String user = "user_flower";
 			String password = "rootroot";
 			con = DriverManager.getConnection(url, user, password);

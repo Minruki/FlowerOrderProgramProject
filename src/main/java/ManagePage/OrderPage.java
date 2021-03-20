@@ -17,6 +17,12 @@ import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.TextField;
+import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JList;
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JTextArea;
 
 public class OrderPage extends JFrame {
 
@@ -48,27 +54,15 @@ public class OrderPage extends JFrame {
 	private JRadioButton rdbtnNewRadioButton_1;
 	private JPanel panel_6;
 	private JPanel panel_7;
-	private JScrollBar scrollBar;
-	private JComboBox comboBox;
 	private JTextField textField_2;
-	private JTextField textField_4;
 	private JPanel panel_8;
-	private JLabel label;
-	private JLabel label_1;
-	private JLabel label_2;
-	private JLabel label_3;
-	private JLabel label_4;
-	private JLabel label_5;
-	private JLabel label_6;
-	private JLabel lblChoice;
-	private JLabel label_8;
-	private JLabel lblNewLabel_5;
 	private JPanel panel_4;
 	private JPanel panel_9;
-	private JPanel panel_10;
 	private JButton btnNewButton;
 	private JTextField textField_5;
-	private TextField textField_6;
+	private JList list;
+	private JDateChooser dateChooser;
+	private JTextArea textArea;
 
 
 	public OrderPage() {
@@ -114,11 +108,11 @@ public class OrderPage extends JFrame {
 		lblid.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblid);
 		
-		lblflower_code = new JLabel("꽃 코드");
+		lblflower_code = new JLabel("꽃 선택");
 		lblflower_code.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblflower_code);
 		
-		lblorder_count = new JLabel("주문수량");
+		lblorder_count = new JLabel("주문내역");
 		lblorder_count.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblorder_count);
 		
@@ -153,8 +147,8 @@ public class OrderPage extends JFrame {
 		panel_2.add(textField_3);
 		textField_3.setColumns(10);
 		
-		textField_6 = new TextField();
-		panel_2.add(textField_6);
+		dateChooser = new JDateChooser();
+		panel_2.add(dateChooser);
 		
 
 		
@@ -170,20 +164,15 @@ public class OrderPage extends JFrame {
 		panel_7.add(textField_2);
 		textField_2.setColumns(10);
 		
-		comboBox = new JComboBox();
-		panel_7.add(comboBox);
-		
 		panel_6 = new JPanel();
 		panel_2.add(panel_6);
 		panel_6.setLayout(new BoxLayout(panel_6, BoxLayout.X_AXIS));
 		
-		textField_4 = new JTextField();
-		textField_4.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel_6.add(textField_4);
-		textField_4.setColumns(10);
+		list = new JList();
+		panel_6.add(list);
 		
-		scrollBar = new JScrollBar();
-		panel_6.add(scrollBar);
+		textArea = new JTextArea();
+		panel_6.add(textArea);
 		
 		panel_5 = new JPanel();
 		panel_5.setBackground(Color.PINK);
@@ -215,49 +204,19 @@ public class OrderPage extends JFrame {
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.PINK);
 		contentPane.add(panel_3);
-		panel_3.setLayout(new GridLayout(0, 1, 10, 10));
+		panel_3.setLayout(null);
 		
-		lblNewLabel_5 = new JLabel("");
-		panel_3.add(lblNewLabel_5);
-		
-		label_1 = new JLabel("");
-		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(label_1);
-		
-		label_2 = new JLabel("");
-		label_2.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(label_2);
-		
-		label_3 = new JLabel("");
-		label_3.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(label_3);
-		
-		label_4 = new JLabel("");
-		label_4.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(label_4);
-		
-		label_5 = new JLabel("");
-		label_5.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(label_5);
-		
-		label_6 = new JLabel("");
-		label_6.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(label_6);
-		
-		lblChoice = new JLabel("");
-		lblChoice.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(lblChoice);
-		
-		label_8 = new JLabel("");
-		label_8.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_3.add(label_8);
-		
-		panel_10 = new JPanel();
-		panel_10.setBackground(Color.PINK);
-		panel_3.add(panel_10);
-		
-		label = new JLabel("");
-		panel_3.add(label);
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setBounds(0, 214, 47, 32);
+		panel_3.add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ChooseFlowers frame = new ChooseFlowers();
+				frame.setVisible(true);
+				
+			}
+		});
+		btnNewButton_1.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\icon2.png"));
 		
 		panel_8 = new JPanel();
 		contentPane.add(panel_8);
@@ -267,5 +226,4 @@ public class OrderPage extends JFrame {
 		panel_8.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
 	}
-
 }

@@ -2,10 +2,12 @@ package FlowerOrderProjectUI;
 
 import javax.swing.JFrame;
 
+import FlowerOrderProgramProject.FlowerLoginView;
+
 // 로그인 화면 실행을 위한 코드
 
 public class FlowerMainProgram{
-   FlowerLoginView flowerloginView;
+   public FlowerLoginView flowerloginView;
    FlowerFrm flowerFrm;
   
    public static void main(String[] args) {
