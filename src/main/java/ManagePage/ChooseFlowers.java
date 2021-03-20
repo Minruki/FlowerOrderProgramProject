@@ -53,7 +53,7 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel1 = new JPanel();
 		panel1.setBackground(new Color(255, 240, 245));
-		panel1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "1. \uC7A5\uBBF8(Rose)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A001(Rose)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel1);
 		panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -62,7 +62,7 @@ public class ChooseFlowers extends JFrame {
 		lblRose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\rose.png"));
 		panel1.add(lblRose);
 		
-		JCheckBox checkbox1 = new JCheckBox("Red color");
+		JCheckBox checkbox1 = new JCheckBox("장미");
 		checkbox1.setBackground(new Color(255, 240, 245));
 		panel1.add(checkbox1);
 		
@@ -71,7 +71,7 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel2 = new JPanel();
 		panel2.setBackground(new Color(255, 240, 245));
-		panel2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "2. \uB77C\uB10C\uD058\uB7EC\uC2A4(Ranunculus)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A002(Ranunculus)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel2);
 		
 		JLabel lblRanun = new JLabel("");
@@ -79,7 +79,7 @@ public class ChooseFlowers extends JFrame {
 		lblRanun.setHorizontalAlignment(SwingConstants.LEFT);
 		panel2.add(lblRanun);
 		
-		JCheckBox checkbox2 = new JCheckBox("HotPink color");
+		JCheckBox checkbox2 = new JCheckBox("라넌큘러스");
 		checkbox1.setBackground(new Color(255, 240, 245));
 		panel2.add(checkbox2);
 		
@@ -88,7 +88,7 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel3 = new JPanel();
 		panel3.setBackground(new Color(255, 240, 245));
-		panel3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "3. \uBC31\uD569(Lily)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A003(Lily)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel3);
 		
 		JLabel lblBaby = new JLabel("");
@@ -96,7 +96,7 @@ public class ChooseFlowers extends JFrame {
 		lblBaby.setHorizontalAlignment(SwingConstants.LEFT);
 		panel3.add(lblBaby);
 		
-		JCheckBox checkbox3 = new JCheckBox("White color");
+		JCheckBox checkbox3 = new JCheckBox("백합");
 		panel3.add(checkbox3);
 		
 		JSpinner number3 = new JSpinner();
@@ -104,7 +104,7 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel4 = new JPanel();
 		panel4.setBackground(new Color(255, 240, 245));
-		panel4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "4. \uD2A4\uB9BD(Tulip)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A004(Tulip)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel4);
 		
 		JLabel lblTulip = new JLabel("");
@@ -112,7 +112,7 @@ public class ChooseFlowers extends JFrame {
 		lblTulip.setHorizontalAlignment(SwingConstants.LEFT);
 		panel4.add(lblTulip);
 		
-		JCheckBox checkbox4 = new JCheckBox("Various color");
+		JCheckBox checkbox4 = new JCheckBox("튤립");
 		checkbox4.setBackground(new Color(255, 240, 245));
 		panel4.add(checkbox4);
 		
@@ -121,7 +121,7 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel5 = new JPanel();
 		panel5.setBackground(new Color(255, 240, 245));
-		panel5.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "5. \uD574\uBC14\uB77C\uAE30(Sunflower)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel5.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A005(Sunflower)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel5);
 		
 		JLabel lblSun = new JLabel("");
@@ -129,7 +129,7 @@ public class ChooseFlowers extends JFrame {
 		lblSun.setHorizontalAlignment(SwingConstants.LEFT);
 		panel5.add(lblSun);
 		
-		JCheckBox checkbox5 = new JCheckBox("Yellow color");
+		JCheckBox checkbox5 = new JCheckBox("해바라기");
 		checkbox5.setBackground(new Color(255, 240, 245));
 		panel5.add(checkbox5);
 		
@@ -138,7 +138,7 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel6 = new JPanel();
 		panel6.setBackground(new Color(255, 240, 245));
-		panel6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "6. \uD53C\uC624\uB2C8(Peony)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A006(Peony)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel6);
 		
 		JLabel lblPeony = new JLabel("");
@@ -146,7 +146,7 @@ public class ChooseFlowers extends JFrame {
 		lblPeony.setHorizontalAlignment(SwingConstants.LEFT);
 		panel6.add(lblPeony);
 		
-		JCheckBox checkbox6 = new JCheckBox("Pink color");
+		JCheckBox checkbox6 = new JCheckBox("피오니");
 		checkbox6.setBackground(new Color(255, 240, 245));
 		panel6.add(checkbox6);
 		
@@ -154,7 +154,7 @@ public class ChooseFlowers extends JFrame {
 		panel6.add(number6);
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "7. \uD504\uB9AC\uC9C0\uC544(Freesia)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A007(Freesia)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.setBackground(new Color(255, 240, 245));
 		contentPane.add(panel);
 		
@@ -163,7 +163,7 @@ public class ChooseFlowers extends JFrame {
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		panel.add(label);
 		
-		JCheckBox chckbxYellowColor = new JCheckBox("Yellow color");
+		JCheckBox chckbxYellowColor = new JCheckBox("프리지아");
 		chckbxYellowColor.setBackground(new Color(255, 240, 245));
 		panel.add(chckbxYellowColor);
 		
@@ -171,7 +171,7 @@ public class ChooseFlowers extends JFrame {
 		panel.add(spinner);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "8. \uCE74\uB124\uC774\uC158(Carnation)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A008(Carnation)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_1.setBackground(new Color(255, 240, 245));
 		contentPane.add(panel_1);
 		
@@ -180,7 +180,7 @@ public class ChooseFlowers extends JFrame {
 		label_1.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_1.add(label_1);
 		
-		JCheckBox chckbxRedColor = new JCheckBox("Red color");
+		JCheckBox chckbxRedColor = new JCheckBox("카네이션");
 		chckbxRedColor.setBackground(new Color(255, 240, 245));
 		panel_1.add(chckbxRedColor);
 		
@@ -188,7 +188,7 @@ public class ChooseFlowers extends JFrame {
 		panel_1.add(spinner_1);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "9. \uC548\uAC1C\uAF43(Gypsophila)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A009(Gypsophila)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_2.setBackground(new Color(255, 240, 245));
 		contentPane.add(panel_2);
 		
@@ -197,7 +197,7 @@ public class ChooseFlowers extends JFrame {
 		label_2.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_2.add(label_2);
 		
-		JCheckBox chckbxWhiteColor = new JCheckBox("White color");
+		JCheckBox chckbxWhiteColor = new JCheckBox("안개꽃");
 		chckbxWhiteColor.setBackground(new Color(255, 240, 245));
 		panel_2.add(chckbxWhiteColor);
 		

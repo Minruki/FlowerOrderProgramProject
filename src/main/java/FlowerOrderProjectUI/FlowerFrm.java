@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 
 import ManagePage.ChooseFlowers;
 import ManagePage.CustomerInfo;
+import ManagePage.FlowerStock;
 import ManagePage.OrderPage;
 
 import java.awt.GridLayout;
@@ -62,10 +63,13 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	JButton btnFs = new JButton("Flower stock");
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
-    			ChooseFlowers frame = new ChooseFlowers();
+    			FlowerStock frame = new FlowerStock();
 				frame.setVisible(true);
     		}
+    		
     	});
+    	
+    
     	btnFs.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnFs);
     	
