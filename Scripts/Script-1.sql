@@ -1,11 +1,3 @@
-select user(), database();
-
-use flowerorderprogram;
-
-drop database flowerorderprogram;
-
-create database if not exists flowerorderprogram;
-
 
 -- 등급별 할인율
 CREATE TABLE membership_discount (
@@ -103,49 +95,3 @@ ALTER TABLE customer_information
 			membership_title -- 멤버십 등급
 		);
 
-
- insert 
-   into membership_discount
- values ('소나무', '30%'),
- 		('꽃', '20%'),
- 		('꽃봉오리', '10%'),
- 		('새싹', '5%');
- 	
-insert
-  into customer_information
-values ('lys6009', '이용수', '010-1234-5678', '1000000', '소나무'),
-       ('yjw6101', '염정원', '010-4321-5678', '750000' ,'꽃' ),
-       ('Minruki', '이민정', '010-4321-8765', '115000', '꽃봉오리'),
-   	   ('lee.daeung', '이대응', '010-5678-1234','10000', '새싹');
- 
- 	
-insert 
-  into flower_information 
-values ('A001','장미', 9000),
-	   ('A002','안개꽃',10000),
-	   ('A003','프리지아',7000),
-	   ('A004','카네이션',5000),
-	   ('A005','국화', 6000),
-	   ('A006','해바라기',10000),
-	   ('A007','피오니', 13000),
-	   ('A008','튤립',8000),
-	   ('A009','라넌큘러스', 15000);
-	  
-
-insert
-  into order_program 
-values (default, '0001', default ,'minruki', 'A002', 1, '꽃바구니', null);
-	
-insert
-  into order_program 
-values (default, '0002', default ,'lys6009', 'A001', 1, '꽃다발', null);
-
-delete from order_program where id = 'minruki';
-
-select * from membership_discount;  	  
-select * from customer_information;
-select * from flower_information;
-select * from order_program;
-
-
- 

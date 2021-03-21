@@ -60,7 +60,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnCI.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnCI);
     	
-    	JButton btnFs = new JButton("Flower stock");
+    	JButton btnFs = new JButton("Detail View");
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			FlowerStock frame = new FlowerStock();
@@ -73,7 +73,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnFs.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnFs);
     	
-    	JButton btnSD = new JButton("Sale Detail");
+    	JButton btnSD = new JButton("Sale Reports");
     	btnSD.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
        	panel_1.add(btnSD);
     	

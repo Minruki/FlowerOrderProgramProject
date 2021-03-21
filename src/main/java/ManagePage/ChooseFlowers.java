@@ -46,36 +46,37 @@ public class ChooseFlowers extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 913, 549);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(Color.PINK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 5, 10, 20));
+		contentPane.setLayout(new GridLayout(2, 5, 10, 20));
 		
 		JPanel panel1 = new JPanel();
-		panel1.setBackground(new Color(255, 240, 245));
+		panel1.setBackground(Color.WHITE);
 		panel1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A001(Rose)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel1);
 		panel1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JLabel lblRose = new JLabel("");
 		lblRose.setHorizontalAlignment(SwingConstants.LEFT);
-		lblRose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\rose.png"));
+		lblRose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\장미9.jpg"));
 		panel1.add(lblRose);
 		
 		JCheckBox checkbox1 = new JCheckBox("장미");
-		checkbox1.setBackground(new Color(255, 240, 245));
+		checkbox1.setVerticalAlignment(SwingConstants.BOTTOM);
+		checkbox1.setBackground(Color.WHITE);
 		panel1.add(checkbox1);
 		
 		JSpinner number1 = new JSpinner();
 		panel1.add(number1);
 		
 		JPanel panel2 = new JPanel();
-		panel2.setBackground(new Color(255, 240, 245));
+		panel2.setBackground(Color.WHITE);
 		panel2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A002(Ranunculus)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel2);
 		
 		JLabel lblRanun = new JLabel("");
-		lblRanun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\라넌큘러스.png"));
+		lblRanun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\라넌큘러스3.jpg"));
 		lblRanun.setHorizontalAlignment(SwingConstants.LEFT);
 		panel2.add(lblRanun);
 		
@@ -87,12 +88,12 @@ public class ChooseFlowers extends JFrame {
 		panel2.add(number2);
 		
 		JPanel panel3 = new JPanel();
-		panel3.setBackground(new Color(255, 240, 245));
+		panel3.setBackground(Color.WHITE);
 		panel3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A003(Lily)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel3);
 		
 		JLabel lblBaby = new JLabel("");
-		lblBaby.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\릴리.png"));
+		lblBaby.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\백합3.jpg"));
 		lblBaby.setHorizontalAlignment(SwingConstants.LEFT);
 		panel3.add(lblBaby);
 		
@@ -103,12 +104,12 @@ public class ChooseFlowers extends JFrame {
 		panel3.add(number3);
 		
 		JPanel panel4 = new JPanel();
-		panel4.setBackground(new Color(255, 240, 245));
+		panel4.setBackground(Color.WHITE);
 		panel4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A004(Tulip)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel4);
 		
 		JLabel lblTulip = new JLabel("");
-		lblTulip.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\튤립.png"));
+		lblTulip.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\튤립3.jpg"));
 		lblTulip.setHorizontalAlignment(SwingConstants.LEFT);
 		panel4.add(lblTulip);
 		
@@ -120,12 +121,12 @@ public class ChooseFlowers extends JFrame {
 		panel4.add(number4);
 		
 		JPanel panel5 = new JPanel();
-		panel5.setBackground(new Color(255, 240, 245));
+		panel5.setBackground(Color.WHITE);
 		panel5.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A005(Sunflower)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel5);
 		
 		JLabel lblSun = new JLabel("");
-		lblSun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\해바라기.png"));
+		lblSun.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\해바라기3.jpg"));
 		lblSun.setHorizontalAlignment(SwingConstants.LEFT);
 		panel5.add(lblSun);
 		
@@ -137,12 +138,12 @@ public class ChooseFlowers extends JFrame {
 		panel5.add(number5);
 		
 		JPanel panel6 = new JPanel();
-		panel6.setBackground(new Color(255, 240, 245));
+		panel6.setBackground(Color.WHITE);
 		panel6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A006(Peony)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel6);
 		
 		JLabel lblPeony = new JLabel("");
-		lblPeony.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\6.png"));
+		lblPeony.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\피오니4.jpg"));
 		lblPeony.setHorizontalAlignment(SwingConstants.LEFT);
 		panel6.add(lblPeony);
 		
@@ -155,11 +156,11 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A007(Freesia)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel.setBackground(new Color(255, 240, 245));
+		panel.setBackground(Color.WHITE);
 		contentPane.add(panel);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\프리지아.png"));
+		label.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\프리지아5.jpg"));
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		panel.add(label);
 		
@@ -172,11 +173,11 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A008(Carnation)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_1.setBackground(new Color(255, 240, 245));
+		panel_1.setBackground(Color.WHITE);
 		contentPane.add(panel_1);
 		
 		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\8.png"));
+		label_1.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\카네이션3.jpg"));
 		label_1.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_1.add(label_1);
 		
@@ -189,11 +190,11 @@ public class ChooseFlowers extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "A009(Gypsophila)", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_2.setBackground(new Color(255, 240, 245));
+		panel_2.setBackground(Color.WHITE);
 		contentPane.add(panel_2);
 		
 		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\3.png"));
+		label_2.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\안개꽃5.jpg"));
 		label_2.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_2.add(label_2);
 		
@@ -205,7 +206,7 @@ public class ChooseFlowers extends JFrame {
 		panel_2.add(spinner_2);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 255, 255));
+		panel_3.setBackground(Color.PINK);
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
 		
@@ -216,8 +217,8 @@ public class ChooseFlowers extends JFrame {
 		});
 		
 		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\basket.png"));
-		btnNewButton.setBounds(35, 117, 122, 113);
+		btnNewButton.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\button2.jpg"));
+		btnNewButton.setBounds(28, 117, 129, 113);
 		panel_3.add(btnNewButton);
 	}
 }

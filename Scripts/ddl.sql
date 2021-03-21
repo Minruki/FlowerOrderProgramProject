@@ -7,7 +7,7 @@ CREATE SCHEMA flower;
 -- 등급별 할인율
 CREATE TABLE flower.membership_discount (
 	membership_title VARCHAR(10) NOT NULL COMMENT '멤버십 등급', -- 멤버십 등급
-	discount_rate    INT(11)     NOT NULL COMMENT '할인율' -- 할인율
+	discount_rate    VARCHAR(10) NOT NULL COMMENT '할인율' -- 할인율
 )
 COMMENT '등급별 할인율';
 
@@ -21,13 +21,13 @@ ALTER TABLE flower.membership_discount
 -- 주문관리
 CREATE TABLE flower.order_program (
 	ono          INT(11)     NOT NULL COMMENT '번호', -- 번호
-	order_number CHAR(4) 	 NOT NULL COMMENT '주문번호', -- 주문번호
+	order_number VARCHAR(10) NOT NULL COMMENT '주문번호', -- 주문번호
 	order_date   DATE        NOT NULL COMMENT '주문날짜', -- 주문날짜
 	id           VARCHAR(10) NOT NULL COMMENT '회원ID', -- 회원ID
 	flower_code  VARCHAR(50) NOT NULL COMMENT '꽃 코드', -- 꽃 코드
 	order_count  INT(11)     NOT NULL COMMENT '주문수량', -- 주문수량
 	choice       VARCHAR(20) NOT NULL COMMENT '구분', -- 구분
-	sale_price   INT(11)     NOT NULL COMMENT '판매가' -- 판매가
+	sale_price   INT(11)     NULL     COMMENT '판매가' -- 판매가
 )
 COMMENT '주문관리';
 
@@ -37,6 +37,9 @@ ALTER TABLE flower.order_program
 		PRIMARY KEY (
 			ono -- 번호
 		);
+
+ALTER TABLE flower.order_program
+	MODIFY COLUMN ono INT(11) NOT NULL AUTO_INCREMENT COMMENT '번호';
 
 -- 고객 정보
 CREATE TABLE flower.customer_information (

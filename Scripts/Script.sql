@@ -1,8 +1,8 @@
 -- 계정 권한 부여	
 grant all 
-   on flowerorderprogram.* 
+   on flower.* 
    to 'user_flower'@'localhost'
-identified by 'rootroot';
+  	identified by 'rootroot';
 
 grant File
    on *.*
