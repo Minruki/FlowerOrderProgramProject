@@ -15,11 +15,11 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import FlowerOrderProjectUI.FlowerMainProgram;
+import FlowerOrderProjectUI.flowerMainProgram;
  
 @SuppressWarnings("serial")
 public class FlowerLoginView extends JFrame{
-    private FlowerMainProgram main;
+    private flowerMainProgram main;
 
     // 로그인 실행하는 창
    
@@ -32,7 +32,7 @@ public class FlowerLoginView extends JFrame{
    
     public static void main(String[] args) {
     	// 메인클래스 실행
-        FlowerMainProgram main = new FlowerMainProgram();
+        flowerMainProgram main = new flowerMainProgram();
         main.flowerloginView = new FlowerLoginView(); // 로그인창 보이기
         main.flowerloginView.setMain(main); // 로그인창에게 메인 클래스보내기
     }
@@ -126,7 +126,7 @@ public class FlowerLoginView extends JFrame{
  
    
     
-    public void setMain(FlowerMainProgram main) {
+    public void setMain(flowerMainProgram main) {
         this.main = main;
     }
    

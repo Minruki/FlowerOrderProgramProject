@@ -19,7 +19,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-public class ChooseFlowers extends JFrame {
+public class chooseFlowers extends JFrame {
 
 	private JPanel contentPane;
 
@@ -30,7 +30,7 @@ public class ChooseFlowers extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ChooseFlowers frame = new ChooseFlowers();
+					chooseFlowers frame = new chooseFlowers();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class ChooseFlowers extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ChooseFlowers() {
+	public chooseFlowers() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 913, 549);
 		contentPane = new JPanel();

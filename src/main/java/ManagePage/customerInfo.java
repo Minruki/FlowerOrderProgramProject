@@ -10,7 +10,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import FlowerProgramPanel.CustomerPanel;
+import FlowerProgramPanel.customerPanel;
 import javax.swing.JLabel;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
@@ -23,12 +23,12 @@ import java.awt.SystemColor;
 import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
-public class CustomerInfo extends JFrame {
+public class customerInfo extends JFrame {
 
 	private JPanel contentPane;
 
 
-	public CustomerInfo() {
+	public customerInfo() {
 		initialize();
 	}
 	private void initialize() {
@@ -42,7 +42,7 @@ public class CustomerInfo extends JFrame {
 		JLabel label = new JLabel("");
 		contentPane.setLayout(null);
 		
-		CustomerPanel panel = new CustomerPanel();
+		customerPanel panel = new customerPanel();
 		panel.setBackground(new Color(245, 245, 245));
 		panel.setBounds(262, 63, 310, 222);
 		contentPane.add(panel);

@@ -12,7 +12,7 @@ import jdbcFlowerProject.dto.customer_information;
 
 
 @SuppressWarnings("serial")
-public class CustomerPanel extends JPanel {
+public class customerPanel extends JPanel {
 	private JTextField tfid;
 	private JTextField tfMember_name;
 	private JTextField tfPhone_number;
@@ -24,7 +24,7 @@ public class CustomerPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public CustomerPanel() {
+	public customerPanel() {
 
 		initialize();
 	}

@@ -24,7 +24,7 @@ import javax.swing.JList;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JTextArea;
 
-public class OrderPage extends JFrame {
+public class orderPage extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel panel_1;
@@ -65,7 +65,7 @@ public class OrderPage extends JFrame {
 	private JTextArea textArea;
 
 
-	public OrderPage() {
+	public orderPage() {
 		initialize();
 	}
 	private void initialize() {
@@ -211,7 +211,7 @@ public class OrderPage extends JFrame {
 		panel_3.add(btnNewButton_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ChooseFlowers frame = new ChooseFlowers();
+				chooseFlowers frame = new chooseFlowers();
 				frame.setVisible(true);
 				
 			}

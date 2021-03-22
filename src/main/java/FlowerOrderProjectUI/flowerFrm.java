@@ -3,10 +3,10 @@ package FlowerOrderProjectUI;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import ManagePage.ChooseFlowers;
-import ManagePage.CustomerInfo;
-import ManagePage.FlowerStock;
-import ManagePage.OrderPage;
+import ManagePage.chooseFlowers;
+import ManagePage.customerInfo;
+
+import ManagePage.orderPage;
 
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -29,10 +29,10 @@ import javax.swing.SwingConstants;
 // 로그인 성공 후 메인 화면
  
 @SuppressWarnings("serial")
-public class FlowerFrm extends JFrame implements ActionListener{
+public class flowerFrm extends JFrame implements ActionListener{
 	private JButton btnOrder;
 	private JButton btnCI;
-    public FlowerFrm() {
+    public flowerFrm() {
     	initialize();
     }
     private void initialize() {
@@ -63,11 +63,15 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	JButton btnFs = new JButton("Detail View");
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
-    			FlowerStock frame = new FlowerStock();
-				frame.setVisible(true);
+    			
+    			
     		}
-    		
     	});
+    	
+    	
+    		
+    		
+    	
     	
     
     	btnFs.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
@@ -94,12 +98,12 @@ public class FlowerFrm extends JFrame implements ActionListener{
 		}
 	}
 	protected void actionPerformedBtn01(ActionEvent e) {
-		OrderPage frame = new OrderPage();
+		orderPage frame = new orderPage();
 		frame.setVisible(true);
 		
 	}
 	protected void actionPerformedBtn02(ActionEvent e) {
-		CustomerInfo frame = new CustomerInfo();
+		customerInfo frame = new customerInfo();
 		frame.setVisible(true);
 		
 	}
