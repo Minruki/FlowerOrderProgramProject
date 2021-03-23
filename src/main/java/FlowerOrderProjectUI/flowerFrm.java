@@ -25,6 +25,16 @@ import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import javax.swing.SwingConstants;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import net.miginfocom.swing.MigLayout;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.FormSpecs;
+import com.jgoodies.forms.layout.RowSpec;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 // 로그인 성공 후 메인 화면
  
@@ -42,16 +52,14 @@ public class flowerFrm extends JFrame implements ActionListener{
     	
     	JPanel panel = new JPanel();
     	getContentPane().add(panel);
-    	panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
     	
     	JPanel panel_1 = new JPanel();
     	panel_1.setAlignmentX(Component.LEFT_ALIGNMENT);
     	panel_1.setBackground(Color.WHITE);
-    	panel.add(panel_1);
     	
     	btnOrder = new JButton("Order");
     	btnOrder.addActionListener(this);
-    	panel_1.setLayout(new GridLayout(0, 1, 0, 5));
+    	panel_1.setLayout(new GridLayout(0, 1, 10, 10));
     	btnOrder.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnOrder);
     	
@@ -67,6 +75,7 @@ public class flowerFrm extends JFrame implements ActionListener{
     			
     		}
     	});
+    	panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
     	
     	
     		
@@ -79,14 +88,15 @@ public class flowerFrm extends JFrame implements ActionListener{
     	
     	JButton btnSD = new JButton("Sale Reports");
     	btnSD.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
-       	panel_1.add(btnSD);
+    	panel_1.add(btnSD);
     	
     	JButton btnLog = new JButton("LogOut");
     	btnLog.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnLog);
+    	panel.add(panel_1);
     	
     	JLabel lblNewLabel = new JLabel("");
-    	lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\FlowerOrderProgramProject\\image\\flowershop.jpg"));
+    	lblNewLabel.setIcon(new ImageIcon("C:\\workspace_java\\FlowerOrderProgramProject\\image\\flower\\flowershop.jpg"));
     	panel.add(lblNewLabel);
     }
 	public void actionPerformed(ActionEvent e) {
