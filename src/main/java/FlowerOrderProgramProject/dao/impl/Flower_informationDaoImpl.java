@@ -9,6 +9,7 @@ import java.util.List;
 
 import FlowerOrderProgramProject.dao.Flower_informationDao;
 import FlowerOrderProgramProject.util.JdbcUtil;
+
 import jdbcFlowerProject.dto.Flower_information;
 
 public class Flower_informationDaoImpl implements Flower_informationDao {
@@ -35,7 +36,7 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 				do {
 					list.add(getflower_information(rs));
 				} while (rs.next());
-				System.out.println(list.size());
+
 				return list;
 
 			}
@@ -47,13 +48,9 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 
 	private Flower_information getflower_information(ResultSet rs) throws SQLException {
 		
-	
-			
 		String flower_code = rs.getString("flower_code");
 		String flower_name = rs.getString("flower_name");
 		int flower_price = rs.getInt("flower_price");
-		
-		
 		
 		return new Flower_information(flower_code, flower_name, flower_price);
 	}
@@ -63,8 +60,7 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 		String sql = "select flower_code, flower_name, flower_price flower_information where flower_code = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, flower_information.getFlower_code());
-			pstmt.setString(2, flower_information.getFlower_name());
-			pstmt.setInt(3, flower_information.getFlower_price());
+		
 			
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
@@ -97,12 +93,12 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 
 	@Override
 	public int updateflower_information(Flower_information flower_information) {
-		String sql = "update flower_information set flower_name = ?, flower_price =? where flower_code = ?";
+		String sql = "update flower_information set flower_price = ? where flower_code = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			
-			pstmt.setString(1, flower_information.getFlower_name());
-			pstmt.setInt(2, flower_information.getFlower_price());
-			pstmt.setString(3, flower_information.getFlower_code());
+			pstmt.setInt(1, flower_information.getFlower_price());
+			pstmt.setString(2, flower_information.getFlower_code());
+			
 			System.out.println(pstmt);
 			return pstmt.executeUpdate();
 
@@ -117,10 +113,12 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 	@Override
 	public int deleteflower_information(Flower_information flower_information) {
 		String sql = "delete from flower_information where flower_code = ?";
-		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+		try (Connection con = JdbcUtil.getConnection(); 
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, flower_information.getFlower_code());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
+			
 			e.printStackTrace();
 		}
 		return 0;

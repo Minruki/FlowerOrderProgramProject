@@ -21,12 +21,14 @@ public class Flower_information {
 		this.flower_price = flower_price;
 	}
 
-	public Flower_information(String string) {
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	
 
-	
-	
+	public Flower_information(String flower_code) {
+		super();
+		this.flower_code = flower_code;
+	}
 
 	/**
 	 * @return the flower_code
@@ -69,6 +71,9 @@ public class Flower_information {
 	public void setFlower_price(int flower_price) {
 		this.flower_price = flower_price;
 	}
+
+	
+	
 
 	@Override
 	public String toString() {
