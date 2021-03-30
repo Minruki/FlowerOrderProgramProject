@@ -7,31 +7,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import FlowerOrderProgramProject.dao.membership_discountDao;
+import FlowerOrderProgramProject.dao.Membership_discountDao;
 import FlowerOrderProgramProject.util.JdbcUtil;
-import jdbcFlowerProject.dto.membership_discount;
-import jdbcFlowerProject.dto.order_program;
+import jdbcFlowerProject.dto.Membership_discount;
+import jdbcFlowerProject.dto.Order_program;
 
-public class membership_discountDaoImpl implements membership_discountDao {
-	private static final membership_discountDaoImpl instance = new membership_discountDaoImpl();
+public class Membership_discountDaoImpl implements Membership_discountDao {
+	private static final Membership_discountDaoImpl instance = new Membership_discountDaoImpl();
 
-	public static membership_discountDaoImpl getInstance() {
+	public static Membership_discountDaoImpl getInstance() {
 		return instance;
 
 	}
 
-	public membership_discountDaoImpl() {
+	public Membership_discountDaoImpl() {
 
 	}
 
 	@Override
-	public List<membership_discount> selectmembership_discountByAll() {
+	public List<Membership_discount> selectmembership_discountByAll() {
 		String sql = "select membership_title, discount_rate from membership_discount";
 		try (Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				ResultSet rs = pstmt.executeQuery()) {
 			if (rs.next()) {
-				List<membership_discount> list = new ArrayList<>();
+				List<Membership_discount> list = new ArrayList<>();
 				do {
 					list.add(getmembership_discount(rs));
 				} while (rs.next());
@@ -45,15 +45,15 @@ public class membership_discountDaoImpl implements membership_discountDao {
 		return null;
 	}
 
-	private membership_discount getmembership_discount(ResultSet rs) throws SQLException {
+	private Membership_discount getmembership_discount(ResultSet rs) throws SQLException {
 		String membership_title = rs.getString("membership_title");
 		String discount_rate = rs.getString("discount_rate");
 
-		return new membership_discount(membership_title, discount_rate);
+		return new Membership_discount(membership_title, discount_rate);
 	}
 
 	@Override
-	public membership_discount selectmembership_discountByNo(membership_discount membership_discount) {
+	public Membership_discount selectmembership_discountByNo(Membership_discount membership_discount) {
 		String sql = "select membership_title, discount_rate from membership_discount from membership_discount where membership_title = ? ";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, membership_discount.getMembership_title());
@@ -69,7 +69,7 @@ public class membership_discountDaoImpl implements membership_discountDao {
 	}
 
 	@Override
-	public int insertmembership_discount(membership_discount membership_discount) {
+	public int insertmembership_discount(Membership_discount membership_discount) {
 		String sql = "insert into membership_discount values(?, ?)";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, membership_discount.getMembership_title());
@@ -83,7 +83,7 @@ public class membership_discountDaoImpl implements membership_discountDao {
 	}
 
 	@Override
-	public int updatemembership_discount(membership_discount membership_discount) {
+	public int updatemembership_discount(Membership_discount membership_discount) {
 		String sql = "update membership_discount set membership_title = ?, where discount_rate = ?";
 		try(Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
@@ -120,19 +120,19 @@ public class membership_discountDaoImpl implements membership_discountDao {
 	}
 
 	@Override
-	public List<order_program> selectorder_programByAll() {
+	public List<Order_program> selectorder_programByAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public order_program selectorder_programByNo(order_program order_program) {
+	public Order_program selectorder_programByNo(Order_program order_program) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int insertorder_program(order_program neworder_program) {
+	public int insertorder_program(Order_program neworder_program) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

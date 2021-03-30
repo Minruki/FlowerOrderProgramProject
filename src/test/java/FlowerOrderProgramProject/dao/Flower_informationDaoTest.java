@@ -1,0 +1,80 @@
+package FlowerOrderProgramProject.dao;
+
+
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+import FlowerOrderProgramProject.dao.impl.Flower_informationDaoImpl;
+
+import jdbcFlowerProject.dto.Flower_information;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
+public class Flower_informationDaoTest {
+	private static Flower_informationDao dao = Flower_informationDaoImpl.getInstance();
+
+	
+
+	@After
+	public void tearDown() throws Exception {
+		System.out.println();
+	}
+	
+	
+
+	@Test
+	public void test04Selectflower_information() {
+		System.out.printf("%s()%n", "testSelectflower_informationByAll");
+		List<Flower_information> flower_informationList= dao.selectflower_informationByAll();
+		Assert.assertNotNull(flower_informationList);
+		
+		for(Flower_information f : flower_informationList) {
+			System.out.println(f);
+		}
+	}
+
+	@Test
+	public void test05Selectflower_informationByNo() {
+		System.out.printf("%s()%n", "test02Selectflower_informationByNo");
+//		flower_information flower_information = new flower_information("A001");
+		Flower_information selectedflower_information = dao.selectflower_informationByNo(new Flower_information("A001"));
+		Assert.assertNotNull(selectedflower_information);
+		System.out.println(selectedflower_information);
+	}
+
+	@Test
+	public void test01Insertflower_information() {
+		System.out.printf("%s()%n", "testInsertflower_information");
+		Flower_information newflower_information = new Flower_information("A011", "국화", 5000);
+		int res = dao.insertflower_information(newflower_information);
+		Assert.assertEquals(1, res);
+		System.out.println(dao.selectflower_informationByNo(newflower_information));
+	}
+	
+	@Test
+	public void test02Updateflower_informationByAll() {
+		System.out.printf("%s()%n", "testUpdateflower_informationByAll");
+		Flower_information newflower_information = new Flower_information("A011", "국화", 7000);
+		int res = dao.updateflower_information(newflower_information);
+		Assert.assertEquals(1, res);
+		System.out.println(dao.selectflower_informationByNo(newflower_information));
+
+	}
+
+	@Test
+	public void test03Deleteflower_informationByNo() {
+		System.out.printf("%s()%n", "testDeleteflower_information");
+		Flower_information Deleteflower_information = new Flower_information("A011");
+		int res = dao.deleteflower_information(Deleteflower_information);
+		Assert.assertEquals(1, res);
+		dao.selectflower_informationByAll().stream().forEach(System.out::println);
+
+	}
+
+}

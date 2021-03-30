@@ -10,7 +10,7 @@ import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import FlowerProgramPanel.customerPanel;
+import FlowerProgramPanel.CustomerPanel;
 import javax.swing.JLabel;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
@@ -23,12 +23,12 @@ import java.awt.SystemColor;
 import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
-public class customerInfo extends JFrame {
+public class CustomerInfo extends JFrame {
 
 	private JPanel contentPane;
 
 
-	public customerInfo() {
+	public CustomerInfo() {
 		initialize();
 	}
 	private void initialize() {
@@ -42,8 +42,8 @@ public class customerInfo extends JFrame {
 		JLabel label = new JLabel("");
 		contentPane.setLayout(null);
 		
-		customerPanel panel = new customerPanel();
-		panel.setBackground(new Color(245, 245, 245));
+		CustomerPanel panel = new CustomerPanel();
+		panel.setBackground(SystemColor.control);
 		panel.setBounds(262, 63, 310, 222);
 		contentPane.add(panel);
 		
@@ -60,7 +60,7 @@ public class customerInfo extends JFrame {
 		panel.add(btnDel);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\copy-space-roses-flowers_23-2148860032.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\copy-space-roses-flowers_23-21488600321.jpg"));
 		lblNewLabel.setBounds(0, -187, 1002, 735);
 		contentPane.add(lblNewLabel);
 	}	

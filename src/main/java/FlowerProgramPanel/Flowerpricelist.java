@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
-public class flowerpricelist extends JPanel {
+public class Flowerpricelist extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -21,7 +21,7 @@ public class flowerpricelist extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public flowerpricelist() {
+	public Flowerpricelist() {
 		setBorder(new TitledBorder(null, "Flower Add", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setLayout(new GridLayout(0, 2, 10, 20));
 		

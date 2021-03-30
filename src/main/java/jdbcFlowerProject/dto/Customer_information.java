@@ -1,22 +1,22 @@
 package jdbcFlowerProject.dto;
 
-public class customer_information {
+public class Customer_information {
 	private String id;
 	private String member_name;
 	private String phone_number;
 	private int cumulative_amount;
 	private String membership_title;
 	
-	public customer_information() {
+	public Customer_information() {
 
 	}
 
-	public customer_information(String id) {
+	public Customer_information(String id) {
 		super();
 		this.id = id;
 	}
 
-	public customer_information(String id, String member_name, String phone_number, int cumulative_amount,
+	public Customer_information(String id, String member_name, String phone_number, int cumulative_amount,
 			String membership_title) {
 	
 		this.id = id;
@@ -26,7 +26,15 @@ public class customer_information {
 		this.membership_title = membership_title;
 	}
 
-	public customer_information(int i) {
+	public Customer_information(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer_information(String string, int i) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer_information(int i, String string) {
 		// TODO Auto-generated constructor stub
 	}
 

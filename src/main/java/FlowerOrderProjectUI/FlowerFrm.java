@@ -3,10 +3,11 @@ package FlowerOrderProjectUI;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import ManagePage.chooseFlowers;
-import ManagePage.customerInfo;
-
-import ManagePage.orderPage;
+import ManagePage.ChooseFlowers;
+import ManagePage.CustomerInfo;
+import ManagePage.Detailview;
+import ManagePage.OrderPage;
+import ManagePage.SearchPage;
 
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -39,10 +40,10 @@ import java.awt.Insets;
 // 로그인 성공 후 메인 화면
  
 @SuppressWarnings("serial")
-public class flowerFrm extends JFrame implements ActionListener{
+public class FlowerFrm extends JFrame implements ActionListener{
 	private JButton btnOrder;
 	private JButton btnCI;
-    public flowerFrm() {
+    public FlowerFrm() {
     	initialize();
     }
     private void initialize() {
@@ -71,7 +72,8 @@ public class flowerFrm extends JFrame implements ActionListener{
     	JButton btnFs = new JButton("Detail View");
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
-    			
+    			Detailview frame = new Detailview();
+				frame.setVisible(true);
     			
     		}
     	});
@@ -87,6 +89,13 @@ public class flowerFrm extends JFrame implements ActionListener{
     	panel_1.add(btnFs);
     	
     	JButton btnSD = new JButton("Sale Reports");
+    	btnSD.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			SearchPage frame = new SearchPage();
+				frame.setVisible(true);
+    		}
+    		
+    	});
     	btnSD.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnSD);
     	
@@ -108,12 +117,12 @@ public class flowerFrm extends JFrame implements ActionListener{
 		}
 	}
 	protected void actionPerformedBtn01(ActionEvent e) {
-		orderPage frame = new orderPage();
+		OrderPage frame = new OrderPage();
 		frame.setVisible(true);
 		
 	}
 	protected void actionPerformedBtn02(ActionEvent e) {
-		customerInfo frame = new customerInfo();
+		CustomerInfo frame = new CustomerInfo();
 		frame.setVisible(true);
 		
 	}

@@ -43,3 +43,17 @@ select * from membership_discount;
 select * from customer_information;
 select * from flower_information;
 select * from order_program;
+
+create or replace view vm_flower 
+as select 
+
+--
+select id, member_name, phone_number from customer_information cus where id = 'lee.daeung';
+
+
+
+--
+
+DELETE FROM customer_information
+where id='test2';
+

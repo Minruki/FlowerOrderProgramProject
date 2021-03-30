@@ -2,7 +2,7 @@ package jdbcFlowerProject.dto;
 
 import java.sql.Date;
 
-public class order_program {
+public class Order_program {
 
 	private int ono;
 	private String order_number;
@@ -13,16 +13,16 @@ public class order_program {
 	private String choice;
 	private int sale_price;
 
-	public order_program() {
+	public Order_program() {
 
 	}
 
-	public order_program(int ono) {
+	public Order_program(int ono) {
 		super();
 		this.ono = ono;
 	}
 
-	public order_program(int ono, String order_number, Date order_date, String id, String flower_code, int order_count,
+	public Order_program(int ono, String order_number, Date order_date, String id, String flower_code, int order_count,
 			String choice, int sale_price) {
 		super();
 		this.ono = ono;

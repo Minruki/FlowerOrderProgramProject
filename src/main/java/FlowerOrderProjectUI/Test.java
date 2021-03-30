@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class test extends JFrame implements ActionListener {
+public class Test extends JFrame implements ActionListener {
 
     JPanel panel;
     JLabel user_label, password_label, message;
@@ -21,7 +21,7 @@ public class test extends JFrame implements ActionListener {
     JPasswordField password_text;
     JButton submit, cancel;
 
-    test() {
+    Test() {
         
         // User Label
         user_label = new JLabel();
@@ -61,7 +61,7 @@ public class test extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new test();
+        new Test();
     }
 
     @Override

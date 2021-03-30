@@ -1,4 +1,4 @@
-package FlowerOrderProgramProject.util;
+package FlowerOrderProgramProject;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class JdbcUtilTest {
+import FlowerOrderProgramProject.util.JdbcUtil;
+
+
+public class JdbcFlowerProjectMainTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -34,7 +37,7 @@ public class JdbcUtilTest {
 	}
 
 	@Test
-	public void testGetConnection() {
+	public void testMain() {
 		System.out.printf("%s()%n", "testGetConnection");
 		Connection con = JdbcUtil.getConnection();
 		System.out.println("con > " + con);

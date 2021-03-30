@@ -24,13 +24,13 @@ import javax.swing.JList;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JTextArea;
 
-public class orderPage extends JFrame {
+public class OrderPage extends JFrame {
 
 	private JPanel contentPane;
-	private JPanel panel_1;
-	private JPanel panel;
-	private JPanel panel_2;
-	private JPanel panel_3;
+	private JPanel background1;
+	private JPanel listPanel;
+	private JPanel writePanel;
+	private JPanel panel3;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
@@ -43,29 +43,29 @@ public class orderPage extends JFrame {
 	private JLabel lblNewLabel_9;
 	private JLabel lblorder_count;
 	private JLabel lblchoice;
-	private JLabel lblNewLabel_3;
-	private JTextField textField;
+	private JLabel backgroundTop;
+	private JTextField tfNo;
 
-	private JTextField textField_1;
-	private JTextField textField_3;
-	private JLabel lblNewLabel_4;
-	private JPanel panel_5;
+	private JTextField tfId;
+	private JTextField tfOrderNo;
+	private JLabel backgroundBottom;
+	private JPanel gubunPanel;
 	private JRadioButton rdbtn01;
 	private JRadioButton rdbtnNewRadioButton_1;
-	private JPanel panel_6;
-	private JPanel panel_7;
+	private JPanel orderList;
+	private JPanel flowerChoice;
 	private JTextField textField_2;
-	private JPanel panel_8;
+	private JPanel background2;
 	private JPanel panel_4;
-	private JPanel panel_9;
-	private JButton btnNewButton;
-	private JTextField textField_5;
+	private JPanel saveBtnPanel;
+	private JButton btnSave;
+	private JTextField resultPrice;
 	private JList list;
 	private JDateChooser dateChooser;
 	private JTextArea textArea;
 
 
-	public orderPage() {
+	public OrderPage() {
 		initialize();
 	}
 	private void initialize() {
@@ -76,154 +76,154 @@ public class orderPage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 5, 0, 0));
 		
-		panel_1 = new JPanel();
-		contentPane.add(panel_1);
-		panel_1.setLayout(new BoxLayout(panel_1, BoxLayout.X_AXIS));
+		background1 = new JPanel();
+		contentPane.add(background1);
+		background1.setLayout(new BoxLayout(background1, BoxLayout.X_AXIS));
 		
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
-		panel_1.add(lblNewLabel_1);
+		background1.add(lblNewLabel_1);
 		
-		panel = new JPanel();
-		panel.setBackground(Color.PINK);
-		contentPane.add(panel);
-		panel.setLayout(new GridLayout(0, 1, 10, 10));
+		listPanel = new JPanel();
+		listPanel.setBackground(Color.PINK);
+		contentPane.add(listPanel);
+		listPanel.setLayout(new GridLayout(0, 1, 10, 10));
 		
 		lblNewLabel_2 = new JLabel("");
-		panel.add(lblNewLabel_2);
+		listPanel.add(lblNewLabel_2);
 		
 		lblono = new JLabel("No.");
 		lblono.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblono);
+		listPanel.add(lblono);
 		
 		lblorder_number = new JLabel("주문번호");
 		lblorder_number.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblorder_number);
+		listPanel.add(lblorder_number);
 		
 		lblorder_date = new JLabel("주문날짜");
 		lblorder_date.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblorder_date);
+		listPanel.add(lblorder_date);
 		
 		lblid = new JLabel("회원ID");
 		lblid.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblid);
+		listPanel.add(lblid);
 		
 		lblflower_code = new JLabel("꽃 선택");
 		lblflower_code.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblflower_code);
+		listPanel.add(lblflower_code);
 		
 		lblorder_count = new JLabel("주문내역");
 		lblorder_count.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblorder_count);
+		listPanel.add(lblorder_count);
 		
 		lblchoice = new JLabel("구분");
 		lblchoice.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblchoice);
+		listPanel.add(lblchoice);
 		
 		lblsale_price = new JLabel("판매가");
 		lblsale_price.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel.add(lblsale_price);
+		listPanel.add(lblsale_price);
 		
 		panel_4 = new JPanel();
 		panel_4.setBackground(Color.PINK);
-		panel.add(panel_4);
+		listPanel.add(panel_4);
 		
 		lblNewLabel_9 = new JLabel("");
-		panel.add(lblNewLabel_9);
+		listPanel.add(lblNewLabel_9);
 		
-		panel_2 = new JPanel();
-		panel_2.setBackground(Color.PINK);
-		contentPane.add(panel_2);
-		panel_2.setLayout(new GridLayout(0, 1, 10, 10));
+		writePanel = new JPanel();
+		writePanel.setBackground(Color.PINK);
+		contentPane.add(writePanel);
+		writePanel.setLayout(new GridLayout(0, 1, 10, 10));
 		
-		lblNewLabel_3 = new JLabel("");
-		panel_2.add(lblNewLabel_3);
+		backgroundTop = new JLabel("");
+		writePanel.add(backgroundTop);
 		
-		textField = new JTextField();
-		panel_2.add(textField);
-		textField.setColumns(10);
+		tfNo = new JTextField();
+		writePanel.add(tfNo);
+		tfNo.setColumns(10);
 		
-		textField_3 = new JTextField();
-		panel_2.add(textField_3);
-		textField_3.setColumns(10);
+		tfOrderNo = new JTextField();
+		writePanel.add(tfOrderNo);
+		tfOrderNo.setColumns(10);
 		
 		dateChooser = new JDateChooser();
-		panel_2.add(dateChooser);
+		writePanel.add(dateChooser);
 		
 
 		
-		textField_1 = new JTextField();
-		panel_2.add(textField_1);
-		textField_1.setColumns(10);
+		tfId = new JTextField();
+		writePanel.add(tfId);
+		tfId.setColumns(10);
 		
-		panel_7 = new JPanel();
-		panel_2.add(panel_7);
-		panel_7.setLayout(new BoxLayout(panel_7, BoxLayout.X_AXIS));
+		flowerChoice = new JPanel();
+		writePanel.add(flowerChoice);
+		flowerChoice.setLayout(new BoxLayout(flowerChoice, BoxLayout.X_AXIS));
 		
 		textField_2 = new JTextField();
-		panel_7.add(textField_2);
+		flowerChoice.add(textField_2);
 		textField_2.setColumns(10);
 		
-		panel_6 = new JPanel();
-		panel_2.add(panel_6);
-		panel_6.setLayout(new BoxLayout(panel_6, BoxLayout.X_AXIS));
+		orderList = new JPanel();
+		writePanel.add(orderList);
+		orderList.setLayout(new BoxLayout(orderList, BoxLayout.X_AXIS));
 		
 		list = new JList();
-		panel_6.add(list);
+		orderList.add(list);
 		
 		textArea = new JTextArea();
-		panel_6.add(textArea);
+		orderList.add(textArea);
 		
-		panel_5 = new JPanel();
-		panel_5.setBackground(Color.PINK);
-		panel_2.add(panel_5);
-		panel_5.setLayout(new GridLayout(0, 2, 0, 0));
+		gubunPanel = new JPanel();
+		gubunPanel.setBackground(Color.PINK);
+		writePanel.add(gubunPanel);
+		gubunPanel.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		rdbtn01 = new JRadioButton("꽃다발");
 		rdbtn01.setBackground(Color.PINK);
-		panel_5.add(rdbtn01);
+		gubunPanel.add(rdbtn01);
 		
 		rdbtnNewRadioButton_1 = new JRadioButton("꽃바구니");
 		rdbtnNewRadioButton_1.setBackground(Color.PINK);
-		panel_5.add(rdbtnNewRadioButton_1);
+		gubunPanel.add(rdbtnNewRadioButton_1);
 		
-		textField_5 = new JTextField();
-		panel_2.add(textField_5);
-		textField_5.setColumns(10);
+		resultPrice = new JTextField();
+		writePanel.add(resultPrice);
+		resultPrice.setColumns(10);
 		
-		panel_9 = new JPanel();
-		panel_9.setBackground(Color.PINK);
-		panel_2.add(panel_9);
+		saveBtnPanel = new JPanel();
+		saveBtnPanel.setBackground(Color.PINK);
+		writePanel.add(saveBtnPanel);
 		
-		btnNewButton = new JButton("SAVE");
-		panel_9.add(btnNewButton);
+		btnSave = new JButton("SAVE");
+		saveBtnPanel.add(btnSave);
 		
-		lblNewLabel_4 = new JLabel("");
-		panel_2.add(lblNewLabel_4);
+		backgroundBottom = new JLabel("");
+		writePanel.add(backgroundBottom);
 		
-		panel_3 = new JPanel();
-		panel_3.setBackground(Color.PINK);
-		contentPane.add(panel_3);
-		panel_3.setLayout(null);
+		panel3 = new JPanel();
+		panel3.setBackground(Color.PINK);
+		contentPane.add(panel3);
+		panel3.setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBounds(0, 214, 47, 32);
-		panel_3.add(btnNewButton_1);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnChoose = new JButton("");
+		btnChoose.setBounds(0, 214, 47, 32);
+		panel3.add(btnChoose);
+		btnChoose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				chooseFlowers frame = new chooseFlowers();
+				ChooseFlowers frame = new ChooseFlowers();
 				frame.setVisible(true);
 				
 			}
 		});
-		btnNewButton_1.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\icon2.png"));
+		btnChoose.setIcon(new ImageIcon("C:\\workspace\\FlowerOrderProgramProject\\image\\flower\\icon2.png"));
 		
-		panel_8 = new JPanel();
-		contentPane.add(panel_8);
-		panel_8.setLayout(new BorderLayout(0, 0));
+		background2 = new JPanel();
+		contentPane.add(background2);
+		background2.setLayout(new BorderLayout(0, 0));
 		
 		lblNewLabel = new JLabel("");
-		panel_8.add(lblNewLabel);
+		background2.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\IMG_0006.JPG"));
 	}
 }

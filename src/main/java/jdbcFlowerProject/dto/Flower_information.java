@@ -1,25 +1,32 @@
 package jdbcFlowerProject.dto;
 
-public class flower_information {
+public class Flower_information {
 	private String flower_code;
 	private String flower_name;
 	private int flower_price;
 
-	public flower_information() {
+	public Flower_information() {
 
 	}
 
-	public flower_information(int flower_price) {
+	public Flower_information(int flower_price) {
 		super();
 		this.flower_price = flower_price;
 	}
 
-	public flower_information(String flower_code, String flower_name, int flower_price) {
+	public Flower_information(String flower_code, String flower_name, int flower_price) {
 
 		this.flower_code = flower_code;
 		this.flower_name = flower_name;
 		this.flower_price = flower_price;
 	}
+
+	public Flower_information(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
 
 	/**
 	 * @return the flower_code
@@ -53,7 +60,7 @@ public class flower_information {
 	 * @return the flower_price
 	 */
 	public int getFlower_price() {
-		return flower_price;
+		return 0;
 	}
 
 	/**

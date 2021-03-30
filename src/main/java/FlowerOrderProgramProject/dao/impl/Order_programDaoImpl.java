@@ -8,29 +8,29 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import FlowerOrderProgramProject.dao.order_programDao;
+import FlowerOrderProgramProject.dao.Order_programDao;
 import FlowerOrderProgramProject.util.JdbcUtil;
-import jdbcFlowerProject.dto.order_program;
+import jdbcFlowerProject.dto.Order_program;
 
-public class order_programDaoImpl implements order_programDao {
-	private static final order_programDaoImpl instance = new order_programDaoImpl();
+public class Order_programDaoImpl implements Order_programDao {
+	private static final Order_programDaoImpl instance = new Order_programDaoImpl();
 	
-	public static order_programDaoImpl getInstance() {
+	public static Order_programDaoImpl getInstance() {
 		return instance;
 	}
-	private order_programDaoImpl() {
+	private Order_programDaoImpl() {
 		
 	}
 	
 	
 	@Override
-	public List<order_program> selectorder_programByAll() {
+	public List<Order_program> selectorder_programByAll() {
 		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price";
 		try (Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				ResultSet rs = pstmt.executeQuery()) {
 			if (rs.next()) {
-				List<order_program> list = new ArrayList<>();
+				List<Order_program> list = new ArrayList<>();
 				do {
 					list.add(getorder_program(rs));
 				} while(rs.next());
@@ -43,7 +43,7 @@ public class order_programDaoImpl implements order_programDao {
 		return null;
 	}
 
-	private order_program getorder_program(ResultSet rs) throws SQLException {
+	private Order_program getorder_program(ResultSet rs) throws SQLException {
 		int ono = rs.getInt("ono");
 		String order_number = rs.getString("order_number");
 		java.sql.Date order_date = rs.getDate("order_date");
@@ -53,11 +53,11 @@ public class order_programDaoImpl implements order_programDao {
 		String choice = rs.getString("choice");
 		int sale_price = rs.getInt("sale_price");
 		
-		return new order_program(ono, order_number, order_date, id, flower_code, order_count, choice, sale_price);
+		return new Order_program(ono, order_number, order_date, id, flower_code, order_count, choice, sale_price);
 	}
 	
 	@Override
-	public order_program selectorder_programByNo(order_program order_program) {
+	public Order_program selectorder_programByNo(Order_program order_program) {
 		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price from order_program ord where ono = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, order_program.getOno());
@@ -75,7 +75,7 @@ public class order_programDaoImpl implements order_programDao {
 	}
 
 	@Override
-	public int insertorder_program(order_program order_program) {
+	public int insertorder_program(Order_program order_program) {
 		String sql = "insert into order_program values(?, ?, ?, ?, ?, ?, ?, ?)";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, order_program.getOno());
@@ -101,7 +101,7 @@ public class order_programDaoImpl implements order_programDao {
 	
 	
 	@Override
-	public int updateorder_program(order_program order_program) {
+	public int updateorder_program(Order_program order_program) {
 		String sql = "update order_program set ono = ?, order_number = ?, order_date = ?, id = ?, flower_code = ?, order_count = ?, choice = ?, sale_price = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 		pstmt.setInt(1, order_program.getOno());
@@ -124,7 +124,7 @@ public class order_programDaoImpl implements order_programDao {
 	}
 
 	@Override
-	public int deleteorder_program(order_program ono) {
+	public int deleteorder_program(Order_program ono) {
 		String sql = "delete from order_program where ono = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, ono());

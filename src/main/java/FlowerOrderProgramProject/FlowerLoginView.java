@@ -15,24 +15,24 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import FlowerOrderProjectUI.flowerMainProgram;
+import FlowerOrderProjectUI.FlowerMainProgram;
  
 @SuppressWarnings("serial")
 public class FlowerLoginView extends JFrame{
-    private flowerMainProgram main;
+    private FlowerMainProgram main;
 
     // 로그인 실행하는 창
    
     private JButton btnLogin;
-    private JPasswordField passText;
-    private JTextField userText;
+    private JPasswordField textpass;
+    private JTextField textId;
     private boolean bLoginCheck;
-    private JLabel lblNewLabel;
-    private JLabel lblNewLabel_1;
+    private JLabel lblLeftImage;
+    private JLabel lblRightImage;
    
     public static void main(String[] args) {
     	// 메인클래스 실행
-        flowerMainProgram main = new flowerMainProgram();
+        FlowerMainProgram main = new FlowerMainProgram();
         main.flowerloginView = new FlowerLoginView(); // 로그인창 보이기
         main.flowerloginView.setMain(main); // 로그인창에게 메인 클래스보내기
     }
@@ -52,45 +52,45 @@ public class FlowerLoginView extends JFrame{
        
         getContentPane().add(panel);
         
-        lblNewLabel = new JLabel("");
-        lblNewLabel.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\flower.JPG"));
-        lblNewLabel.setBounds(0, 0, 439, 427);
-        panel.add(lblNewLabel);
+        lblLeftImage = new JLabel("");
+        lblLeftImage.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\flower.JPG"));
+        lblLeftImage.setBounds(0, 0, 439, 427);
+        panel.add(lblLeftImage);
         
-        lblNewLabel_1 = new JLabel("");
-        lblNewLabel_1.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\heart.jpg"));
-        lblNewLabel_1.setBounds(415, -13, 539, 1031);
-        panel.add(lblNewLabel_1);
+        lblRightImage = new JLabel("");
+        lblRightImage.setIcon(new ImageIcon("c:\\workspace\\FlowerOrderProgramProject\\image\\flower\\heart.jpg"));
+        lblRightImage.setBounds(415, -13, 539, 1031);
+        panel.add(lblRightImage);
        
         setVisible(true);
     }
    
     public void placeLoginPanel(JPanel panel){
         panel.setLayout(null);     
-        JLabel userLabel = new JLabel("Manager id");
-        userLabel.setHorizontalAlignment(SwingConstants.LEFT);
-        userLabel.setFont(new Font("Gabriola", Font.ITALIC, 20));
-        userLabel.setForeground(Color.BLACK);
-        userLabel.setBackground(Color.WHITE);
-        userLabel.setBounds(470, 25, 128, 25);
-        panel.add(userLabel);
+        JLabel lblid = new JLabel("Manager id");
+        lblid.setHorizontalAlignment(SwingConstants.LEFT);
+        lblid.setFont(new Font("Gabriola", Font.ITALIC, 20));
+        lblid.setForeground(Color.BLACK);
+        lblid.setBackground(Color.WHITE);
+        lblid.setBounds(470, 25, 128, 25);
+        panel.add(lblid);
        
-        JLabel passLabel = new JLabel("Password");
-        passLabel.setHorizontalAlignment(SwingConstants.LEFT);
-        passLabel.setForeground(Color.BLACK);
-        passLabel.setFont(new Font("Gabriola", Font.ITALIC, 20));
-        passLabel.setBackground(Color.WHITE);
-        passLabel.setBounds(470, 94, 99, 25);
-        panel.add(passLabel);
+        JLabel lblPass = new JLabel("Password");
+        lblPass.setHorizontalAlignment(SwingConstants.LEFT);
+        lblPass.setForeground(Color.BLACK);
+        lblPass.setFont(new Font("Gabriola", Font.ITALIC, 20));
+        lblPass.setBackground(Color.WHITE);
+        lblPass.setBounds(470, 94, 99, 25);
+        panel.add(lblPass);
        
-        userText = new JTextField(20);
-        userText.setBounds(470, 54, 212, 30);
-        panel.add(userText);
+        textId = new JTextField(20);
+        textId.setBounds(470, 54, 212, 30);
+        panel.add(textId);
        
-        passText = new JPasswordField(20);
-        passText.setBounds(470, 118, 212, 30);
-        panel.add(passText);
-        passText.addActionListener(new ActionListener() {          
+        textpass = new JPasswordField(20);
+        textpass.setBounds(470, 118, 212, 30);
+        panel.add(textpass);
+        textpass.addActionListener(new ActionListener() {          
             @Override
             public void actionPerformed(ActionEvent e) {
                 isLoginCheck();        
@@ -111,7 +111,7 @@ public class FlowerLoginView extends JFrame{
     }
    
     public void isLoginCheck(){
-        if(userText.getText().equals("minruki") && new String(passText.getPassword()).equals("angel")){
+        if(textId.getText().equals("minruki") && new String(textpass.getPassword()).equals("angel")){
             JOptionPane.showMessageDialog(null, "Success");
             bLoginCheck = true;
            
@@ -126,7 +126,7 @@ public class FlowerLoginView extends JFrame{
  
    
     
-    public void setMain(flowerMainProgram main) {
+    public void setMain(FlowerMainProgram main) {
         this.main = main;
     }
    

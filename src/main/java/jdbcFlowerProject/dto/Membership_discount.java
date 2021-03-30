@@ -1,14 +1,14 @@
 package jdbcFlowerProject.dto;
 
-public class membership_discount {
+public class Membership_discount {
 	private String membership_title;
 	private String discount_rate;
 	
-	public membership_discount() {
+	public Membership_discount() {
 		
 	}
 
-	public membership_discount(String membership_title, String discount_rate) {
+	public Membership_discount(String membership_title, String discount_rate) {
 		super();
 		this.membership_title = membership_title;
 	}

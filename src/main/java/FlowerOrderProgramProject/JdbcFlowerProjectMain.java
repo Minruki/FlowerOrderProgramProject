@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import jdbcFlowerProject.dto.flower_information;
+import jdbcFlowerProject.dto.Flower_information;
 
 public class JdbcFlowerProjectMain {
 
@@ -15,7 +15,7 @@ public class JdbcFlowerProjectMain {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		ArrayList<flower_information> list = null;
+		ArrayList<Flower_information> list = null;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -51,18 +51,18 @@ public class JdbcFlowerProjectMain {
 			 
 		}
 		System.out.println("flower_information Query 결과는");
-		for(flower_information f : list) {
+		for(Flower_information f : list) {
 			System.out.println(f);
 		}
 
 	}
 
-	private static flower_information getflower_information(ResultSet rs) throws SQLException { 
+	private static Flower_information getflower_information(ResultSet rs) throws SQLException { 
 		String flower_code = rs.getString("flower_code"); 
 		String flower_name = rs.getString("flower_name");
 		int flower_price = rs.getInt("flower_price");
 		
-		return new flower_information(flower_code, flower_name, flower_price);
+		return new Flower_information(flower_code, flower_name, flower_price);
 	}
 
 }

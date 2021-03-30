@@ -29,8 +29,7 @@
 				"url": "jdbc:mysql://localhost:3306/",
 				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
 				"type": "dev",
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
 			}
 		},
 		"mysql8-17859f3e032-5d7fda820c024286": {
@@ -44,6 +43,22 @@
 				"port": "3306",
 				"database": "practice_title",
 				"url": "jdbc:mysql://localhost:3306/practice_title",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mysql8-1786919688b-1f9349007dbedf50": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "erp",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "erp",
+				"url": "jdbc:mysql://localhost:3306/erp",
 				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
 				"type": "dev",
 				"auth-model": "native",

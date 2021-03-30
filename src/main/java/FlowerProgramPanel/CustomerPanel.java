@@ -8,11 +8,11 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 
-import jdbcFlowerProject.dto.customer_information;
+import jdbcFlowerProject.dto.Customer_information;
 
 
 @SuppressWarnings("serial")
-public class customerPanel extends JPanel {
+public class CustomerPanel extends JPanel {
 	private JTextField tfid;
 	private JTextField tfMember_name;
 	private JTextField tfPhone_number;
@@ -24,7 +24,7 @@ public class customerPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public customerPanel() {
+	public CustomerPanel() {
 
 		initialize();
 	}
@@ -74,16 +74,16 @@ public class customerPanel extends JPanel {
 		add(tfMembership_title);
 	}
 
-	public customer_information getcustomer_information() {
+	public Customer_information getcustomer_information() {
 		String id = tfid.getText().trim();
 		String Member_name = tfMember_name.getText().trim();
 		String Phone_number = tfPhone_number.getText().trim();
 		int Cumulative_amount = Integer.parseInt(tfCumulative_amount.getText().trim());
 		String Membership_title = tfMembership_title.getText().trim();
-		return new customer_information(id, Member_name, Phone_number, Cumulative_amount, Membership_title);
+		return new Customer_information(id, Member_name, Phone_number, Cumulative_amount, Membership_title);
 	}
 
-	public void setcustomer_information(customer_information customer_information) {
+	public void setcustomer_information(Customer_information customer_information) {
 		tfid.setText(customer_information.getId());
 		tfMember_name.setText(customer_information.getMember_name());
 		tfPhone_number.setText(customer_information.getPhone_number());
