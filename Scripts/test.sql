@@ -15,6 +15,7 @@ select * from vm_flower vf ;
 --
 select id, member_name, phone_number from customer_information cus where id = 'lee.daeung';
 
+select flower_code, flower_name, flower_price flower_information from flower_information where flower_code = 'A011';
 -- INSERT
 insert into flower_information values('A011', '국화', 9000);
 

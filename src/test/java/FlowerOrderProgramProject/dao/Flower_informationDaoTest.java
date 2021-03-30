@@ -11,7 +11,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import FlowerOrderProgramProject.dao.impl.Flower_informationDaoImpl;
-
 import jdbcFlowerProject.dto.Flower_information;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -44,11 +43,18 @@ public class Flower_informationDaoTest {
 	@Test
 	public void test05Selectflower_informationByNo() {
 		System.out.printf("%s()%n", "test05Selectflower_informationByNo");
-
-		Flower_information selectedflower_information = dao.selectflower_informationByNo(new Flower_information("A001"));
+		Flower_information flower = new Flower_information("A001");
+		Flower_information selectedflower_information = dao.selectflower_informationByNo(flower);
 		Assert.assertNotNull(selectedflower_information);
 		System.out.println(selectedflower_information);
 	}
+//	public void test05SelectTitleByNo() {
+//		System.out.printf("%s()%n", "testSelectTitleByNo");
+//		Title title = new Title(5);
+//		Title searchTitle = dao.selectTitleByNo(title);
+//		Assert.assertNotNull(searchTitle);
+//		System.out.println(searchTitle);
+//	}
 
 	@Test
 	public void test01Insertflower_information() {

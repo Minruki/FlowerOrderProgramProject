@@ -36,9 +36,7 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 				do {
 					list.add(getflower_information(rs));
 				} while (rs.next());
-
 				return list;
-
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -47,7 +45,6 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 	}
 
 	private Flower_information getflower_information(ResultSet rs) throws SQLException {
-		
 		String flower_code = rs.getString("flower_code");
 		String flower_name = rs.getString("flower_name");
 		int flower_price = rs.getInt("flower_price");
@@ -57,11 +54,10 @@ public class Flower_informationDaoImpl implements Flower_informationDao {
 
 	@Override 
 	public Flower_information selectflower_informationByNo(Flower_information flower_information) {
-		String sql = "select flower_code, flower_name, flower_price flower_information where flower_code = ?";
-		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+		String sql = "select flower_code, flower_name, flower_price from flower_information where flower_code =?";
+		try (Connection con = JdbcUtil.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, flower_information.getFlower_code());
-		
-			
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
 					return getflower_information(rs);
