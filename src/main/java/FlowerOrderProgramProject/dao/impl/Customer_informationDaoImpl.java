@@ -124,7 +124,8 @@ public class Customer_informationDaoImpl implements Customer_informationDao {
 	@Override
 	public int deletecustomer_information(Customer_information customer_information) {
 		String sql = "delete from customer_information where id = ?";
-		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+		try (Connection con = JdbcUtil.getConnection(); 
+			PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, customer_information.getId());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {

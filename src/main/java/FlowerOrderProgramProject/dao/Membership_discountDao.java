@@ -11,10 +11,9 @@ public interface Membership_discountDao {
 	
 	int insertmembership_discount(Membership_discount membership_discount);
 	int updatemembership_discount(Membership_discount membership_discount);
-	int deletemembership_discount(String discount_rate);
-	List<Order_program> selectorder_programByAll();
-	Order_program selectorder_programByNo(Order_program order_program);
-	int insertorder_program(Order_program neworder_program);
+	int deletemembership_discount(Membership_discount membership_discount);
+	
+
 	
 
 }

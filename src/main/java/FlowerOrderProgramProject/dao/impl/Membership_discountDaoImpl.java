@@ -10,7 +10,6 @@ import java.util.List;
 import FlowerOrderProgramProject.dao.Membership_discountDao;
 import FlowerOrderProgramProject.util.JdbcUtil;
 import jdbcFlowerProject.dto.Membership_discount;
-import jdbcFlowerProject.dto.Order_program;
 
 public class Membership_discountDaoImpl implements Membership_discountDao {
 	private static final Membership_discountDaoImpl instance = new Membership_discountDaoImpl();
@@ -20,9 +19,7 @@ public class Membership_discountDaoImpl implements Membership_discountDao {
 
 	}
 
-	public Membership_discountDaoImpl() {
-
-	}
+	private Membership_discountDaoImpl() {}
 
 	@Override
 	public List<Membership_discount> selectmembership_discountByAll() {
@@ -46,6 +43,7 @@ public class Membership_discountDaoImpl implements Membership_discountDao {
 	}
 
 	private Membership_discount getmembership_discount(ResultSet rs) throws SQLException {
+
 		String membership_title = rs.getString("membership_title");
 		String discount_rate = rs.getString("discount_rate");
 
@@ -54,7 +52,7 @@ public class Membership_discountDaoImpl implements Membership_discountDao {
 
 	@Override
 	public Membership_discount selectmembership_discountByNo(Membership_discount membership_discount) {
-		String sql = "select membership_title, discount_rate from membership_discount from membership_discount where membership_title = ? ";
+		String sql = "select membership_title, discount_rate from membership_discount where membership_title = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, membership_discount.getMembership_title());
 			try (ResultSet rs = pstmt.executeQuery()) {
@@ -84,9 +82,8 @@ public class Membership_discountDaoImpl implements Membership_discountDao {
 
 	@Override
 	public int updatemembership_discount(Membership_discount membership_discount) {
-		String sql = "update membership_discount set membership_title = ?, where discount_rate = ?";
-		try(Connection con = JdbcUtil.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(sql)){
+		String sql = "update membership_discount set membership_title = ? where discount_rate = ?";
+		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, membership_discount.getMembership_title());
 			pstmt.setString(2, membership_discount.getDiscount_rate());
 			return pstmt.executeUpdate();
@@ -97,43 +94,17 @@ public class Membership_discountDaoImpl implements Membership_discountDao {
 	}
 
 	@Override
-	public int deletemembership_discount(String discount_rate) {
-		String sql = "delete from membership_discount where discount_rate = ?";
-		
-		try(Connection con = JdbcUtil.getConnection();
-		
-			PreparedStatement pstmt = con.prepareStatement(sql)){
-			pstmt.setString(1, discount_rate());
+	public int deletemembership_discount(Membership_discount membership_discount) {
+		String sql = "delete from membership_discount where membership_title = ?";
+
+		try (Connection con = JdbcUtil.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setString(1, membership_discount.getMembership_title());
 			return pstmt.executeUpdate();
-			
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-				
-		return 0;
-	}
-
-	private String discount_rate() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Order_program> selectorder_programByAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Order_program selectorder_programByNo(Order_program order_program) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int insertorder_program(Order_program neworder_program) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

@@ -75,7 +75,7 @@ public class Customer_informationDaoTest {
 
 	@Test
 	public void test03Deletecustomer_information() {
-		System.out.printf("%s()%n", "testDeleteTitle");
+		System.out.printf("%s()%n", "testDeletecustomer_information");
 		Customer_information Deletecustomer_information = new Customer_information("test2");
 		int res = dao.deletecustomer_information(Deletecustomer_information);
 		Assert.assertEquals(1, res);
