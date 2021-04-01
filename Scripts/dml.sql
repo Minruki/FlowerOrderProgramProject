@@ -28,7 +28,7 @@ values ('A001','장미', 9000),
 
 insert
   into order_program 
-values (default, '0001', now(),'minruki', 'A002', 1, '꽃바구니', 0);
+values (default, '0001', now(),'min', 'A002', 1, '꽃바구니', 0);
 	
 insert
   into order_program 
@@ -38,11 +38,24 @@ insert
   into order_program 
 values (default, '0002', now() ,'lys6009', 'A001', 1, '꽃다발', null);
 
+insert
+  into order_program 
+values (default, '0001', now() ,'Minruki', 'A001', 1, '꽃다발', 0);
+
+insert
+  into order_program 
+values (default, '0001', now() ,'yjw6101', 'A001', 1, '꽃다발', 0);
+
+update order_program set order_number = '0003', order_date = now(), flower_code = 'A001', order_count = 5, choice = '꽃다발', sale_price = 0 where id = 'yjw6101';
+
+
+
 
 select * from membership_discount;  	  
 select * from customer_information;
 select * from flower_information;
 select * from order_program;
+
 -- view 생성
 create view vm_flower as
 select ono, order_number, order_date, op.id as id, order_count, choice,
@@ -66,7 +79,7 @@ select * from flower_information;
 DELETE FROM flower_information
 where flower_code ='A011';
 -- 
-
+delete from order_program where id = 'min';
 select ono, order_number, order_date, op.id as id, order_count, choice,
  sale_price, member_name, phone_number, cumulative_amount, ci.membership_title as membership, discount_rate, fi.flower_code as flower_code, flower_name, flower_price
   from order_program op 

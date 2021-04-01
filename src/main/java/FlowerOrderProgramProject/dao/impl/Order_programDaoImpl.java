@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import FlowerOrderProgramProject.dao.Order_programDao;
@@ -25,7 +25,7 @@ public class Order_programDaoImpl implements Order_programDao {
 	
 	@Override
 	public List<Order_program> selectorder_programByAll() {
-		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price";
+		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price from order_program";
 		try (Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				ResultSet rs = pstmt.executeQuery()) {
@@ -58,10 +58,10 @@ public class Order_programDaoImpl implements Order_programDao {
 	
 	@Override
 	public Order_program selectorder_programByNo(Order_program order_program) {
-		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price from order_program ord where ono = ?";
+		String sql = "select ono, order_number, order_date, id, flower_code, order_count, choice, sale_price from order_program ord where id = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setInt(1, order_program.getOno());
-			
+			pstmt.setString(1, order_program.getId());
+
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
 					return getorder_program(rs);
@@ -76,16 +76,15 @@ public class Order_programDaoImpl implements Order_programDao {
 
 	@Override
 	public int insertorder_program(Order_program order_program) {
-		String sql = "insert into order_program values(?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into order_program values(null, ?, ?, ?, ?, ?, ?, ?)";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setInt(1, order_program.getOno());
-			pstmt.setString(2, order_program.getOrder_number());
-			pstmt.setDate(3, order_program.getOrder_date());
-			pstmt.setString(4, order_program.getId());
-			pstmt.setString(5, order_program.getFlower_code());;
-			pstmt.setInt(6, order_program.getOrder_count());
-			pstmt.setString(7, order_program.getChoice());
-			pstmt.setInt(8, order_program.getSale_price());
+			pstmt.setString(1, order_program.getOrder_number());
+			pstmt.setTimestamp(2, new Timestamp(order_program.getOrder_date().getTime()));
+			pstmt.setString(3, order_program.getId());
+			pstmt.setString(4, order_program.getFlower_code());;
+			pstmt.setInt(5, order_program.getOrder_count());
+			pstmt.setString(6, order_program.getChoice());
+			pstmt.setInt(7, order_program.getSale_price());
 			
 			return pstmt.executeUpdate();
 
@@ -102,16 +101,16 @@ public class Order_programDaoImpl implements Order_programDao {
 	
 	@Override
 	public int updateorder_program(Order_program order_program) {
-		String sql = "update order_program set ono = ?, order_number = ?, order_date = ?, id = ?, flower_code = ?, order_count = ?, choice = ?, sale_price = ?";
+		String sql = "update order_program set order_number = ?, order_date = ?, flower_code = ?, order_count = ?, choice = ?, sale_price = ? where id = ?";
 		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
-		pstmt.setInt(1, order_program.getOno());
-		pstmt.setString(2, order_program.getOrder_number());
-		pstmt.setDate(3, order_program.getOrder_date());
-		pstmt.setString(4, order_program.getId());
-		pstmt.setString(5, order_program.getFlower_code());;
-		pstmt.setInt(6, order_program.getOrder_count());
-		pstmt.setString(7, order_program.getChoice());
-		pstmt.setInt(8, order_program.getSale_price());
+		
+		pstmt.setString(1, order_program.getOrder_number());
+		pstmt.setTimestamp(2, new Timestamp(order_program.getOrder_date().getTime()));
+		pstmt.setString(3, order_program.getFlower_code());;
+		pstmt.setInt(4, order_program.getOrder_count());
+		pstmt.setString(5, order_program.getChoice());
+		pstmt.setInt(6, order_program.getSale_price());
+		pstmt.setString(7, order_program.getId());
 		System.out.println(pstmt);
 		return pstmt.executeUpdate();
 
@@ -124,19 +123,20 @@ public class Order_programDaoImpl implements Order_programDao {
 	}
 
 	@Override
-	public int deleteorder_program(Order_program ono) {
-		String sql = "delete from order_program where ono = ?";
-		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setInt(1, ono());
+	public int deleteorder_program(Order_program order_program) {
+		String sql = "delete from order_program where id = ?";
+		try (Connection con = JdbcUtil.getConnection(); 
+			PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setString(1, order_program.getId());
+			System.out.println(order_program.getId());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return 0;
+	
+	
 	}
-	private int ono() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 }

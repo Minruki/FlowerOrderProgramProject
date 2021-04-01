@@ -10,6 +10,6 @@ public interface Order_programDao {
 	
 	int insertorder_program(Order_program order_program);
 	int updateorder_program(Order_program order_program);
-	int deleteorder_program(Order_program ono); 
+	int deleteorder_program(Order_program order_program); 
 
 }

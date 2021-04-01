@@ -1,6 +1,6 @@
 package jdbcFlowerProject.dto;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Order_program {
 
@@ -16,6 +16,13 @@ public class Order_program {
 	public Order_program() {
 
 	}
+
+	public Order_program(String id) {
+		super();
+		this.id = id;
+	}
+	
+	
 
 	public Order_program(int ono) {
 		super();
@@ -153,5 +160,7 @@ public class Order_program {
 				"order_program [ono=%s, order_number=%s, order_date=%s, id=%s, flower_code=%s, order_count=%s, choice=%s, sale_price=%s]",
 				ono, order_number, order_date, id, flower_code, order_count, choice, sale_price);
 	}
+
+	
 
 }

@@ -30,9 +30,13 @@ select * from flower_information;
 DELETE FROM flower_information
 where flower_code ='A011';
 -- 
+select * from order_program;
+
+DELETE FROM order_program 
+where ono = 8;
 
 delete from membership_discount where membership_title = '씨앗';
-
+delete from order_program where id = 'min';
 select * from membership_discount;
 
 delete from membership_discount 
@@ -46,3 +50,13 @@ select ono, order_number, order_date, op.id as id, order_count, choice,
   	join customer_information ci on op.id= ci.id
   	join membership_discount md on ci.membership_title = md.membership_title 
   	join flower_information fi on op.flower_code = fi.flower_code ;
+
+ delete from order_program where ono = 1; 
+  
+desc order_program;
+select * from order_program;
+
+insert into order_program values('A011', '국화', 9000);
+
+select * from customer_information;
+select * from flower_information;

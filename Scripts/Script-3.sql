@@ -1,6 +1,9 @@
-create user 'erp_practice'@'localhost' identified by '1234567';
+create user 'user_native_jdbc'@'localhost' identified by '1234567';
 
 grant all
-   on erp.*
-   to 'erp_practice'@'localhost'
+   on user_native_jdbc.*
+   to 'user_native_jdbc'@'localhost'
       identified by 'rootroot';
+      
+     select * from title;
+     DELETE FROM title where tno = 7;
