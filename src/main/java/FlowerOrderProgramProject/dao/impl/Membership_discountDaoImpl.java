@@ -82,11 +82,22 @@ public class Membership_discountDaoImpl implements Membership_discountDao {
 
 	@Override
 	public int updatemembership_discount(Membership_discount membership_discount) {
-		String sql = "update membership_discount set membership_title = ? where discount_rate = ?";
-		try (Connection con = JdbcUtil.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setString(1, membership_discount.getMembership_title());
-			pstmt.setString(2, membership_discount.getDiscount_rate());
+		String sql = "update membership_discount set discount_rate = ? where membership_title = ? ";
+		try (
+				
+			Connection con = JdbcUtil.getConnection(); 
+				
+				
+			PreparedStatement pstmt = con.prepareStatement(sql)) 
+		
+		{
+			pstmt.setString(1, membership_discount.getDiscount_rate());
+			pstmt.setString(2, membership_discount.getMembership_title());
+		
+		
 			return pstmt.executeUpdate();
+			
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

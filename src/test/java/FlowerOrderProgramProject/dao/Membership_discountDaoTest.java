@@ -40,8 +40,6 @@ public class Membership_discountDaoTest {
 		System.out.println(searchmembership_discount);
 
 	}
-	
-
 
 	@Test
 	public void test01Insertmembership_discount() {
@@ -54,10 +52,14 @@ public class Membership_discountDaoTest {
 
 	@Test
 	public void test02Updatemembership_discountByAll() {
-		System.out.printf("%s()%n", "testUpdatemembership_discount");
-		Membership_discount newmembership_discount = new Membership_discount("씨앗", "1%");
+		System.out.printf("%s()%n", "test02Updatemembership_discount");
+
+		Membership_discount newmembership_discount = new Membership_discount("씨앗", "3%");
+
 		int res = dao.updatemembership_discount(newmembership_discount);
+
 		Assert.assertEquals(1, res);
+
 		System.out.println(dao.selectmembership_discountByNo(newmembership_discount));
 
 	}
@@ -65,7 +67,7 @@ public class Membership_discountDaoTest {
 	@Test
 	public void test03Deletemembership_discountByNo() {
 		System.out.printf("%s()%n", "test03Deletemembership_discount");
-		Membership_discount Deletemembership_discount = new Membership_discount("씨앗");
+		Membership_discount Deletemembership_discount = new Membership_discount("씨앗", "3%");
 		System.out.println(Deletemembership_discount);
 		int res = dao.deletemembership_discount(Deletemembership_discount);
 		Assert.assertEquals(1, res);
