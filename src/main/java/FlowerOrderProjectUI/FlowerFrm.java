@@ -43,6 +43,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	initialize();
     }
     private void initialize() {
+    	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     	setSize(1139, 478);
     	setVisible(true);
     	getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
@@ -65,7 +66,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnCI.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnCI);
     	
-    	JButton btnFs = new JButton("Detail View");
+    	JButton btnFs = new JButton("Manage Flowers");
     	btnFs.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			Detailview frame = new Detailview();
@@ -84,7 +85,7 @@ public class FlowerFrm extends JFrame implements ActionListener{
     	btnFs.setFont(new Font("Gabriola", Font.BOLD | Font.ITALIC, 20));
     	panel_1.add(btnFs);
     	
-    	JButton btnSD = new JButton("Sale Reports");
+    	JButton btnSD = new JButton("View All");
     	btnSD.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent e) {
     			SearchPage frame = new SearchPage();

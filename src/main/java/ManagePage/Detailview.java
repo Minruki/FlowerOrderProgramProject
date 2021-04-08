@@ -14,10 +14,17 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
+import javax.swing.ImageIcon;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import java.awt.Color;
 
 public class Detailview extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -39,7 +46,7 @@ public class Detailview extends JFrame {
 	 * Create the frame.
 	 */
 	public Detailview() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 766, 534);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -57,7 +64,7 @@ public class Detailview extends JFrame {
 		panel.add(btnCancel);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "List", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "List view", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel_1);
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
@@ -68,13 +75,34 @@ public class Detailview extends JFrame {
 		panel_1.add(panel_3, BorderLayout.SOUTH);
 		
 		JButton btnNewButton = new JButton("수정");
-		panel_3.add(btnNewButton);
+		panel_3.add(btnNewButton); 
 		
 		JButton btnNewButton_1 = new JButton("저장");
 		panel_3.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("삭제");
 		panel_3.add(btnNewButton_2);
+		
+		table = new JTable();
+		panel_1.add(table, BorderLayout.WEST);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{1, 2, 3, 4, 5},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"\uBC88\uD638", "\uAF43 \uCF54\uB4DC", "\uAF43 \uC774\uB984", "\uB2E8\uAC00", "New column"
+			}
+		));
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
